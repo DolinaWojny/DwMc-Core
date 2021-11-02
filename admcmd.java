@@ -15,7 +15,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
 
-public class Cmds implements CommandExecutor{
+public class AdmCmds implements CommandExecutor{
 	
   public Map<String, BukkitTask> tp = new HashMap<String, BukkitTask>();
 	
