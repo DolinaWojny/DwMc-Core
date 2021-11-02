@@ -17,11 +17,9 @@ import org.bukkit.scheduler.BukkitTask;
 
 public class Cmds implements CommandExecutor{
 	
-  
-  
-  
-  
-  
-  
-  
-  }
+  public Map<String, BukkitTask> tp = new HashMap<String, BukkitTask>();
+	
+	@Override
+	public boolean onCommand(CommandSender sender, Command cmd, String l, String[] args) {
+	}
+}
