@@ -21,22 +21,15 @@ public class AdmCmds implements CommandExecutor{
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String l, String[] args) {
-		if(cmd.getName().equalsIgonreCase("mspawn")){
-			if(sender.hasPermission("dwmc.admin.mspawn")){
-				if(args.Lenght !=1) {
-					retrun false;
+		if(cmd.getName().equalsIgnoreCase("mspawn") {
+			if(sender.hasPermission("dw.admin.mobspawn") {
+				if(args.lenght !=1){
+					return false;
 				}
-					List<String> str = new ArrayList<String>();
-					for(EntityType en : EntityType.values()){
-						str.add(en.name());
-					}
-				if(str.contains(args[0].toUpperCase())) {
-				if(sender instanceof Player) {
-					((Player)sender).getLocation().getWorld().spawnEntity(((Player)sender).getLocation(), EntityType.valueOf(args[0].toUpperCase()));
-					}
+				List<String> str= NewArrayList<String>();
+				for(EntityType en: EntityTupe.values()){
+					str.add(en.name());
 				}
 			}
-		}
-		
+		}   
 	}
-}
