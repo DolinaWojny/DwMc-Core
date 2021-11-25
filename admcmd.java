@@ -21,15 +21,37 @@ public class AdmCmds implements CommandExecutor{
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String l, String[] args) {
-		if(cmd.getName().equalsIgnoreCase("mspawn") {
-			if(sender.hasPermission("dw.admin.mobspawn") {
-				if(args.lenght !=1){
-					return false;
+		
+		if(cmd.getName().equalsignoreCase("heal") {
+			if(sender.hasPermission("dwmc.heal") {
+				if(!(sender instanceof Player){
+					sender.sendMessage("Tylko gracz może użyć tej komendy!");
 				}
-				List<String> str= NewArrayList<String>();
-				for(EntityType en: EntityTupe.values()){
-					str.add(en.name());
-				}
+					if(args.lenght == 0){
+						Player p = (Player) sender;
+						p.setHealth(20);
+						p.sendMessage("Uleczyłeś się!");
+					}
+				   	if(args.lenght >= 1) {
+						string pName = args[0];
+						if(bukkit.getPlayer(pName) !=null){
+							Player p = bukkit.getPlayer(pName);
+							p.setHealth(20);
+							p.sendMessage("Zostałeś uleczony");
+						} else {
+							sender.sendMessage("Nie znaleziono gracza o takim nicku");
+						}
+					}
+			} else {
+				sender.sendMessage("Nie posiadasz uprawnień do wykonania tej komendy!");
 			}
-		}   
-	}
+		}//cmd.getName().equalsIgnoreCase("heal")
+		if(cmd.getName().equalsIgnoreCase("gm") {
+			if(sender.hasPermission("dwmc.gamemode") {
+			
+			} else {
+				sender.sendMessage("Nie posiadasz uprawnień do wykonania tej komendy!");
+			}
+		} //cmd.getName().equalsIgnoreCase("gm")
+
+}//Public boolean
