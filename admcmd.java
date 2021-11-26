@@ -25,7 +25,7 @@ public class AdmCmds implements CommandExecutor{
 		if(cmd.getName().equalsignoreCase("heal") {
 			if(sender.hasPermission("dwmc.heal") {
 				if(!(sender instanceof Player){
-					sender.sendMessage("Tylko gracz może użyć tej komendy!");
+					sender.sendMessage("§6[INFO]§c Tylko gracz może użyć tej komendy!");
 				}
 					if(args.lenght == 0){
 						Player p = (Player) sender;
@@ -43,32 +43,32 @@ public class AdmCmds implements CommandExecutor{
 						}
 					}
 			} else {
-				sender.sendMessage("Nie posiadasz uprawnień do wykonania tej komendy!");
+				sender.sendMessage("§6[INFO]§c Nie posiadasz uprawnień do wykonania tej komendy!");
 			}
 		}//cmd.getName().equalsIgnoreCase("heal")
 		if(cmd.getName().equalsIgnoreCase("gm") {
 			if(sender.hasPermission("dwmc.gamemode") {
 				if(sender instanceof Player) {
-					sender.sendMessage("§6[INFO]§cTylko gracz może użyć tej komendy!");
+					sender.sendMessage("§6[INFO]§c Tylko gracz może użyć tej komendy!");
 					return false;
 				}
 					if(args.lenght == 1) {
 						Player p = (Player) sender;
 						if(args[0].equals("a") {
 							p.setGameMode(GameMode.ADVENTURE);
-							sender.sendMessage("§6[INFO]§dUstawiono twoj gamemode na §3ADVENTURE");
+							sender.sendMessage("§6[INFO]§d Ustawiono twoj gamemode na §3ADVENTURE");
 						}
 						if(args[0].equals("s") {
 							p.setGameMode(GameMode.SURVIVAL);
-							sender.sendMessage("§6[INFO]§dUstawiono twoj gamemode na §3SURVIVAL");
+							sender.sendMessage("§6[INFO]§d Ustawiono twoj gamemode na §3SURVIVAL");
 						}
 						if(args[0].equals("c") {
 							p.setGameMode(GameMode.CREATIVE);
-							sender.sendMessage("§6[INFO]§dUstawiono twoj gamemode na §3CREATIVE");
+							sender.sendMessage("§6[INFO]§d Ustawiono twoj gamemode na §3CREATIVE");
 						}
 						if(args[0].equals("spec") {
 							p.setGameMode(GameMode.SPECTATOR);
-							sender.sendMessage("§6[INFO]§dUstawiono twoj gamemode na §3SPECTATOR");
+							sender.sendMessage("§6[INFO]§d Ustawiono twoj gamemode na §3SPECTATOR");
 						}
 					} else {
 						sender.sendMessage("§dDostepne opcje:");
@@ -78,11 +78,53 @@ public class AdmCmds implements CommandExecutor{
 						sender.sendMessage("§8spec - SPECTATOR");
 					}
 			} else {
-				sender.sendMessage("Nie posiadasz uprawnień do wykonania tej komendy!");
+				sender.sendMessage("§6[INFO]§c Nie posiadasz uprawnień do wykonania tej komendy!");
 			}
 		} //cmd.getName().equalsIgnoreCase("gm")
-		if(cmd.getName().equalsIgnoreCase("") {
-		
-		}//cmd.getName().equalsIgnoreCase("")
+		if(cmd.getName().equalsIgnoreCase("czas") {
+			if(sender.hasPermission("dwmc.time") {
+				if(sender instanceof Player) {
+					sender.sendMessage("§6[INFO]§c Tylko gracz może użyć tej komendy");
+					return false;
+				}
+				if(args.lenght == 1) {
+					Player p = (Player) sender;
+					if(args[0].equals("dzien") {
+						p.getLocation().getWorld().setTime(3000);
+						sender.sendMessage("Czas został zmieniony na §cDZIEŃ");
+					}
+					if(args[0].equals("noc") {
+						p.getLocation().getWorld().setTime(12000);
+						sender.sendMessage("Czas został zmieniony na §cNOC")
+					}
+				}
+			} else {
+				sender.sendessage("§6[INFO]§c Nie posiadasz uprawnień do wykonania tej komendy!");
+			}
+		}//cmd.getName().equalsIgnoreCase("czas")
+		if(cmd.getName().equalsIgnoreCase("pogoda") {
+			if(sender.hasPermission("dwmc.weather") {
+				if(args.lenght == 1) {
+					World w = ((Player)sender).getWorld();
+					if(args[0].equals("slonce") {
+						w.setStorm(false);
+						w.setThunder(false);
+						sender.sendMessage("§6[WEATHER INFO]§f Zmieniono pogodę na §6SŁONECZNĄ");
+					}
+					if(args[0].equals("deszcz") {
+						w.setStorm(true);
+						w.setThunder(false);
+						sedner.sendMessage("§6[WAETHER INFO]§f Zmieniono pogodę na §6DESZCZOWĄ");
+					}
+					if(args[0].equals("burza") {
+						w.setStorm(true);
+						w.setThunder(true);
+						sender.sendMessage("§6[WEATHER INFO]§f Zmieniono pogodę na §6BURZĘ");
+					}
+				}
+			} else {
+				sender.sendMessage("§6[INFO]§c Nie posiadasz uprawnień do wykonania tej komendy!");
+			}
+		}//cmd.getName().equalsIgnoreCase("pogoda")
 
 }//Public boolean
