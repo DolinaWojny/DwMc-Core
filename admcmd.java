@@ -22,7 +22,7 @@ public class AdmCmds implements CommandExecutor{
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String l, String[] args) {
 		
-		if(cmd.getName().equalsignoreCase("heal") {
+		if(cmd.getName().equalsignoreCase("heal")) {
 			if(sender.hasPermission("dwmc.heal") {
 				if(!(sender instanceof Player){
 					sender.sendMessage("§6[INFO]§c Tylko gracz może użyć tej komendy!");
@@ -46,7 +46,7 @@ public class AdmCmds implements CommandExecutor{
 				sender.sendMessage("§6[INFO]§c Nie posiadasz uprawnień do wykonania tej komendy!");
 			}
 		}//cmd.getName().equalsIgnoreCase("heal")
-		if(cmd.getName().equalsIgnoreCase("gm") {
+		if(cmd.getName().equalsIgnoreCase("gm")) {
 			if(sender.hasPermission("dwmc.gamemode") {
 				if(sender instanceof Player) {
 					sender.sendMessage("§6[INFO]§c Tylko gracz może użyć tej komendy!");
@@ -81,7 +81,7 @@ public class AdmCmds implements CommandExecutor{
 				sender.sendMessage("§6[INFO]§c Nie posiadasz uprawnień do wykonania tej komendy!");
 			}
 		} //cmd.getName().equalsIgnoreCase("gm")
-		if(cmd.getName().equalsIgnoreCase("czas") {
+		if(cmd.getName().equalsIgnoreCase("czas")) {
 			if(sender.hasPermission("dwmc.time") {
 				if(sender instanceof Player) {
 					sender.sendMessage("§6[INFO]§c Tylko gracz może użyć tej komendy");
@@ -102,7 +102,7 @@ public class AdmCmds implements CommandExecutor{
 				sender.sendessage("§6[INFO]§c Nie posiadasz uprawnień do wykonania tej komendy!");
 			}
 		}//cmd.getName().equalsIgnoreCase("czas")
-		if(cmd.getName().equalsIgnoreCase("pogoda") {
+		if(cmd.getName().equalsIgnoreCase("pogoda")) {
 			if(sender.hasPermission("dwmc.weather") {
 				if(args.lenght == 1) {
 					World w = ((Player)sender).getWorld();
@@ -126,5 +126,7 @@ public class AdmCmds implements CommandExecutor{
 				sender.sendMessage("§6[INFO]§c Nie posiadasz uprawnień do wykonania tej komendy!");
 			}
 		}//cmd.getName().equalsIgnoreCase("pogoda")
-
+		if(cmd.getName().equalsIgnoreCase("")) {
+		
+		}//cmd.getName()equalsIgnoreCase("")
 }//Public boolean
